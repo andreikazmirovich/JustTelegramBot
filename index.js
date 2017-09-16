@@ -9,7 +9,7 @@ var bot = new TelegramBot(token, {
   polling: true,
 });
 
-bot.onText(/\/start/, (msg) => {
+bot.onText(/\/next/, (msg) => {
   request('http://www.lp.edu.ua/rozklad-dlya-studentiv-zaochnykiv?group=%D0%9A%D0%9D-22%D0%B7&semestr=0', (error, response, body) => {
     var dom = new JSDOM(body),
         table = dom.window.document.querySelector("table.outer tbody");
@@ -42,7 +42,7 @@ bot.onText(/\/start/, (msg) => {
     // console.log(days[0][0].textContent);
 
     var message = '';
-    
+
     for(var i = 0; i < days.length; i++){
     	if(days[i][0].textContent === curDate){
 
