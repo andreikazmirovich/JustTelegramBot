@@ -45,6 +45,14 @@
 			};
 
 /*----------  FUNCTIONS  ----------*/
+	
+	bot.onText(/\/start/, (msg) => {
+		bot.sendMessage(msg.chat.id, "Welcome", {
+			"reply_markup": {
+				"keyboard": [["/next","/today"], ["/help"]]
+			}
+		});   
+	});
 
 	/*----------  Function on '/next'  ----------*/
 		bot.onText(/\/next/, (msg) => {
