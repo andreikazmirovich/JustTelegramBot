@@ -43,7 +43,7 @@ bot.onText(/\/next/, (msg) => {
 	    var curTime = `${date.getHours()}${date.getMinutes()}`,
 	        curDate = `${date.getDate()}.${date.getMonth()+1 < 10 ? `0${date.getMonth()+1}` : date.getMonth()+1}.${date.getFullYear()}`;
 
-	    days[5][0].textContent = '17.09.2017';
+	    days[5][0].textContent = '20.09.2017';
 	    // days[5][5].children[0].textContent = '6';
 
 	    var message = '';
@@ -85,7 +85,7 @@ bot.onText(/\/today/, (msg) => {
 	    var curTime = `${date.getHours()}${date.getMinutes()}`,
 	        curDate = `${date.getDate()}.${date.getMonth()+1 < 10 ? `0${date.getMonth()+1}` : date.getMonth()+1}.${date.getFullYear()}`;
 
-	    days[5][0].textContent = '17.09.2017';
+	    days[5][0].textContent = '19.09.2017';
 	    // days[5][5].children[0].textContent = '6';
 
 	    var message = '';
@@ -97,6 +97,11 @@ bot.onText(/\/today/, (msg) => {
 	    		}
 	      	}
 	    }
-	    bot.sendMessage(userID, message, {parse_mode : "HTML"});
+	    if(message.length != 0){
+	    	bot.sendMessage(userID, message, {parse_mode : "HTML"});
+	    }
+	    else{
+	    	bot.sendMessage(userID, "Сьогодні пар немає!");
+	    }
 	});
 });
