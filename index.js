@@ -92,10 +92,6 @@ bot.onText(/\/today/, (msg) => {
 
 	    for(var i = 0; i < days.length; i++){
 	    	if(days[i][0].textContent === curDate){
-	    		/*days[i].forEach(function(item, index) {
-	    			console.log(item.children[0].textContent);
-	    			// message += `${index} - <b>${item.children[0].textContent}</b>`
-	    		});*/
 	    		for(var j = 1; j < days[i].length; j++){
 	    			message += `${days[i][j].children[0].textContent} - <b>${days[i][j].children[1].textContent}</b>\n`;
 	    		}
