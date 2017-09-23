@@ -60,12 +60,12 @@
 			    var userID = msg.chat.id,
 			    	days = getArrOfSubjects(msg, body),
 			    	date = new Date();
-			    	date.setHours('14');
-			    	date.setMinutes('20');
+			    	// date.setHours('14');
+			    	// date.setMinutes('20');
 			    var curTime = `${date.getHours()}${date.getMinutes()}`,
 			        curDate = `${date.getDate()}.${date.getMonth()+1 < 10 ? `0${date.getMonth()+1}` : date.getMonth()+1}.${date.getFullYear()}`;
 
-			    days[5][0].textContent = '20.09.2017';
+			    // days[5][0].textContent = '20.09.2017';
 			    // days[5][5].children[0].textContent = '6';
 
 			    var message = '';
@@ -116,7 +116,7 @@
 			    for(var i = 0; i < days.length; i++){
 			    	if(days[i][0].textContent === curDate){
 			    		for(var j = 1; j < days[i].length; j++){
-			    			message += `${days[i][j].children[0].textContent} (${timetable[days[i][j].children[0].textContent]}) - <b>${days[i][j].children[1].textContent}</b>\n`;
+			    			message += `${days[i][j].children[0].textContent} (${timetable[days[i][j].children[0].textContent - 1]}) - <b>${days[i][j].children[1].textContent}</b>\n`;
 			    		}
 			      	}
 			    }
